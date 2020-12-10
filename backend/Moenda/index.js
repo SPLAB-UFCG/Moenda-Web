@@ -13,10 +13,6 @@ module.exports = {
 
     if (util.testIfIsFile(path) === true) {
       result += util.exitAid(program, genericRules);
-  
-      if (program.context === "true"){
-        result += mdContext.contextGenerator(program.path);
-      }
       
     } else {
       let parameter = '';
@@ -30,10 +26,8 @@ module.exports = {
       const array = util.directoryFiles(program.path, parameter);
   
       for (let i = 0; i < array.length; i++) {
-        result += util.exitAid(program, genericRules, array[i]) + os.EOL;
-        if (program.context === "true"){
-          result += mdContext.contextGenerator(array[i]);
-        }
+        result += util.exitAid(program, genericRules, array[i]);
+        
       }
     }
 

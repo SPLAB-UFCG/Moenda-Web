@@ -92,20 +92,20 @@ module.exports = {
     const functions = Object.values(genericRules).concat(Object.values(program.rules));
     const config = program.config;
 
-    let string = '';
+    let string = [];
     let errors = 0;
     let infos = 0;
     let returns = [];
 
     // Counting errors and infos and creating array of objects with status equal to 'info' and 'error'.
     if (this.testIfIsFile(program.path)) {
-      string += program.path + os.EOL;
+      string.push(program.path + os.EOL);
       errors = this.selectsObjectsWithStatusErrorAndInfo(functions, program.path, config).errors;
       infos = this.selectsObjectsWithStatusErrorAndInfo(functions, program.path, config).infos;
       returns = this.selectsObjectsWithStatusErrorAndInfo(functions, program.path, config).data;
       
     } else {
-      string += `${program.path}/${file}` + os.EOL
+      string.push(`${program.path}/${file}` + os.EOL);
       errors = this.selectsObjectsWithStatusErrorAndInfo(functions, `${program.path}/${file}`, config).errors;
       infos = this.selectsObjectsWithStatusErrorAndInfo(functions, `${program.path}/${file}`, config).infos;
       returns = this.selectsObjectsWithStatusErrorAndInfo(functions, `${program.path}/${file}`, config).data;
@@ -126,11 +126,11 @@ module.exports = {
     });
 
     for (let j = 0; j < returns.length; j++) {
-      string += returns[j].toString + os.EOL;
+      string.push(returns[j].toString + os.EOL);
     }
 
-    string += os.EOL + '* ' + errors + ` problem(s) (${errors} errors)` + os.EOL;
-    string += '* ' + infos + ' info(s)' + os.EOL;
+    string.push(os.EOL + '* ' + errors + ` problem(s) (${errors} errors)` + os.EOL);
+    string.push('* ' + infos + ' info(s)' + os.EOL);
     
     return string;
   },

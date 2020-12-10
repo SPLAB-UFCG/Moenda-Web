@@ -1,4 +1,4 @@
-var Git = require("nodegit");
+const git = require("nodegit");
 const moenda = require("../../../backend/Moenda/index");
 const rules = require("../../../backend/Moenda/MD/MDRules");
 const config = require("../../../backend/Moenda/config");
@@ -12,7 +12,7 @@ module.exports = {
       rimraf.sync("./frontend/src/userRepository/master");
     }
     
-    return Git.Clone(link, "./frontend/src/userRepository/master");
+    return git.Clone(link, "./frontend/src/userRepository/master");
   },
 
   moendaExecute: function(){
