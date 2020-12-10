@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  align-items: center;
+
+}
+
+.App-header {
+  background-color: #001429;
+  display: flex;
+  font-size: 20px;
+  color: white;
+}
+
+h3 {
+  margin-left: 3%;
+}
+
+form {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+input[type=text]  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.App-Result {
+  align-items: justify;
+  height: 20%;
+  margin-top: 35px;
+  white-space: normal;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  text-align: left;
+}
+
+button[type=submit] {
+  width: 100%;
+  border-radius: 5px;
+  margin: 8px 0;
+  padding: 12px 20px;
+  background-color: #001429;
+  color: white;
+  font-size: 20px;
+}
